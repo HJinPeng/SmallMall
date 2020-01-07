@@ -1,4 +1,5 @@
 <!--pages/home/home.wxml-->
-<text class="title">home page</text>
+<text class="title" bindtap="clickItem">首页</text>
+<button size="mini" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取用户信息</button>
 
-<text>知识点2</text>
+<open-data type="userNickName"></open-data>
