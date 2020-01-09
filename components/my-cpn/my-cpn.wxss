@@ -1,0 +1,6 @@
+/* components/my-cpn/my-cpn.wxss */
+
+.title {
+  color: red;
+  background-color: blue;
+}

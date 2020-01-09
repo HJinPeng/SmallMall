@@ -1,66 +1,48 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    isShow: true,
+    score: 40,
+    price: 25.666,
+    colors:['red','yellow','blue'],
+    count: 0,
+    text:''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad(){
+   console.log('onload')
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onShow(){
+    console.log('onShow')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onReady(){
+    console.log('onReady');
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleIncrement(){
+    this.setData({
+      score: this.data.score+10
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleItem(event){
+    console.log(event);
+    var dataset = event.currentTarget.dataset;
+    console.log(dataset);
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  handleIncrement(event){
+    console.log(event);
+    this.setData({
+      count: this.data.count+1
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handleTabClick(event){
+    console.log(event);
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleIncrementCpn(){
+    const my_sel = this.selectComponent('.sel-class');
+    console.log(my_sel);
+    my_sel.incrementCount(10)
+    //不推荐
+    // my_sel.setData({
+    //   count: my_sel.data.count +20
+    // })
   }
 })

@@ -1,0 +1,7 @@
+<!--components/my-cpn/my-cpn.wxml-->
+<view class="title">{{title}}</view>
+<view class="content contentclass">我是{{content}}</view>
+<view>{{item}}</view>
+<!-- 组件不能使用id选择器，tag选择器等 -->
+<!-- <cpn1/>
+<cpn1/> -->

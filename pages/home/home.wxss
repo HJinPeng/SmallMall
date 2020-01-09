@@ -3,3 +3,22 @@
   color: red;
   font-size: 18px;
 }
+
+.contain {
+  display: flex;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+}
+
+.red{
+  background-color: red;
+  color: white;
+}
+
+.blue{
+  background-color: blue;
+  color: white;
+}

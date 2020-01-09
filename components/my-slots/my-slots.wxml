@@ -1,0 +1,6 @@
+<!--components/my-slots/my-slots.wxml-->
+<view>插槽的开始</view>
+<view class="slot1"><slot name="slot1"></slot></view>
+<view class="slot2"><slot name="slot2"></slot></view>
+<view class="slot3"><slot name="slot3"></slot></view>
+<view>插槽的结束</view>

@@ -1,4 +1,86 @@
 <!--pages/home/home.wxml-->
-<text class="title">home page</text>
+<!-- <view>----条件判断-------</view>
+<view wx:if="{{isShow}}">哈哈哈</view>
+<button size="mini" bindtap="handleIncrement">分数递增10</button>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
 
-<text>知识点2</text>
+<view>------hidden-----</view>
+<view hidden="{{false}}">hidden隐藏</view>
+
+<view>----for-----</view>
+<view wx:for="{{['abc','def','ghi']}}" wx:key="index">{{item}} {{index}}</view>
+<view wx:for="thisisamap" wx:for-item="word" wx:for-index="i" wx:key="i">{{word}} {{i}}</view>
+
+<view>---------block----------</view>
+<block v:if="{{false}}">
+  <button size="mini">按钮1</button>
+  <button size="mini">按钮2</button>
+  <button size="mini">按钮3</button>
+</block> -->
+<!-- 
+<include src="/wxml/header.wxml"/>
+<view>--------模板中包裹的内容在没有被使用时是不会被渲染的---------</view> -->
+<!-- <template name="contentItem"> 
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+<!-- <import src="../../wxml/template.wxml" />
+<template is="contentItem" data="{{btnText: '按钮',content:'hello'}}" /> -->
+
+<!-- wxs -->
+<!-- <wxs module="info">
+  var message = 'Hello  world';
+  var name = 'hjp';
+  var sum = function(num1,num2){
+    return num1+num2;
+  };
+  module.exports = {
+    message: message,
+    name: name,
+    sum: sum
+  }
+</wxs> -->
+<!-- 使用相对定位 -->
+<wxs src="../../wxs/info.wxs" module="info"/>
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(20,30)}}</view>
+
+<wxs src="../../wxs/format.wxs" module="format"/>
+<view>{{format.priceFormat(price,2)}}</view>
+
+<view class="contain">
+  <block wx:for="{{colors}}" wx:key="index">
+    <view class="item" bindtap="handleItem"
+      data-item="{{item}}"
+      data-index="{{index}}"
+    >{{item}}</view>
+  </block>
+</view>
+
+<!--  capture-bind:tap="handleCaptureView1"  事件捕获  bind一层层传递 -->
+<!--  capture-catch:tap="handleCaptureView1"   catch阻止事件进一步传递-->
+<!--  catchtap="handleItem"   catch阻止事件进一步传递-->
+
+<my-cpn title="我是标题1" content="组件1" item="我是传值1" contentclass="red"/>
+<my-cpn title="我是标题2" content="组件2" item="我是传值2" contentclass="blue"/>
+
+<view>当前计数为：{{count}}</view>
+<my-event bind:increment="handleIncrement"/>
+
+<tab-control titles="{{['热门','新款','精选']}}" bind:itemClick="handleTabClick"/>
+<button size="mini"  bind:tap="handleIncrementCpn" >修改组件内的数据</button>
+<my-sel text="{{text}}" class="sel-class"/>
+
+<view>---------------</view>
+<my-slot>content</my-slot>
+<my-slot>content2</my-slot>
+
+<my-slots>
+  <button size="mini" slot="slot2">这是个按钮2</button>
+  <button size="mini" slot="slot1">这是个按钮1</button>
+  <button size="mini" slot="slot3">这是个按钮3</button>
+</my-slots>

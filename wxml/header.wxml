@@ -1,0 +1,2 @@
+<view>header</view>
+<include src="/wxml/headerItem.wxml"/>

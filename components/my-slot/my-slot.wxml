@@ -1,0 +1,4 @@
+<!--components/my-slot/my-slot.wxml-->
+<view>header</view>
+<slot></slot>
+<view>footer</view>
