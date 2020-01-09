@@ -1,66 +1,67 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
+  handleShowToast(){
+    wx.showToast({
+      title: '你好啊',
+      duration: 3000,
+      icon: 'loading',
+      mask: true,
+      success: ()=>{
+        console.log('success');
+      },
+      fail:()=>{
+        console.log('fail');
+      },
+      complete:()=>{
+        console.log('complete');
+      }
+    })
+  },
+  handleShowModal(){
+    wx.showModal({
+      title: '我是标题',
+      content:'我是内容',
+      cancelText:'退出',
+      cancelColor: 'red',
+      // showCancel: false,
+      success:(res)=>{
+        console.log(res);
+        if(res.cancel) {
+          console.log('点击了取消');
+        }else{
+          console.log('点击了确定');
+        }
+      }
+    })
+  },
+  handleShowLoading(){
+    wx.showLoading({
+      title: '加载ing',
+      mask: true
+    })
+    setTimeout(()=>{
+      wx.hideLoading({
+        complete: (res) => {},
+      })
+    },1000)
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleShowActionSheet(){
+    wx.showActionSheet({
+      itemList: ['相册','拍照'],
+      success: (res)=>{
+        console.log(res);
+        switch (res.tapIndex){
+          case 0 :
+            console.log('0');
+            break;
+          case 1:
+            console.log('1');
+            break;
+          default:
+            break;
+        }
+      }
+    })
   }
 })

@@ -1,3 +1,18 @@
 <!--pages/home/home.wxml-->
 <text class="title">home page</text>
 <button size="mini">点击</button>
+
+<view>----------</view>
+<!-- toast -->
+<button size="mini" bind:tap="handleShowToast">点击展示弹窗</button>
+<view>----------</view>
+<!-- modal -->
+<button size="mini" bind:tap="handleShowModal">点击展示Modal</button>
+
+<view>----------</view>
+<!-- Loading -->
+<button size="mini" bind:tap="handleShowLoading">点击展示Loading</button>
+
+<view>----------</view>
+<!-- ActionSheet -->
+<button size="mini" bind:tap="handleShowActionSheet">点击展示ActionSheet</button>
