@@ -1,0 +1,5 @@
+<!--pages/comment/comment.wxml-->
+<text>pages/comment/comment.wxml</text>
+
+
+<navigator open-type="navigateBack" delta="2">返回首页，返回两级</navigator>

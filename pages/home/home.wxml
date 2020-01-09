@@ -1,3 +1,18 @@
 <!--pages/home/home.wxml-->
 <text class="title">home page</text>
 <button size="mini">点击</button>
+
+<view>----页面跳转--------</view>
+<navigator url="/pages/detail/detail">跳转到详情页</navigator>
+
+<!-- navigator属性：open-type -->
+<navigator url="/pages/detail/detail" open-type="redirect">跳转到详情页(redirect)</navigator>
+<navigator url="/pages/about/about" open-type="switchTab">跳转到详情页(switchTab)</navigator>
+<navigator url="/pages/detail/detail" open-type="reLaunch">跳转到详情页(reLaunch)</navigator>
+
+<!-- 跳转过程中数据的传递 -->
+<navigator url="/pages/detail/detail?name=hjp&age=18">跳转到详情页(数据传递)</navigator>
+<view>{{title}}</view>
+
+<!-- 通过代码跳转 -->
+<button size="mini" bind:tap="handlePushDetail">通过代码跳转</button>
