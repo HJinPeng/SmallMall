@@ -1,0 +1,15 @@
+<!--pages/category/childCpns/h-content/h-content.wxml-->
+<scroll-view class="content" scroll-y>
+  <view class="subcategory">
+    <block wx:for="{{subCategories}}" wx:key="index">
+      <view class="item">
+        <image class="image" src="{{item.image}}" mode="widthFix"/>
+        <view class="title">{{item.title}}</view>
+      </view>
+    </block>  
+  </view>
+
+  <view class="detail">
+    <h-goods goods="{{categoryDetail}}"/>
+  </view>
+</scroll-view>
