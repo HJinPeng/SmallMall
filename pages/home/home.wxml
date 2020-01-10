@@ -1,3 +1,19 @@
 <!--pages/home/home.wxml-->
-<text class="title">home page</text>
-<button size="mini">点击</button>
+<!-- 1. 轮播图 -->
+<h-swiper lists="{{banners}}"/>
+
+<!-- 2.推荐数据展示 -->
+<h-recommend recommends="{{recommends}}" bind:imageLoad="handleImageLoad"/>
+
+<!-- 3. 展示本周流行 -->
+<h-popular/>
+
+<!-- 4. tab-control -->
+<h-tab-control id="tab-control" titles="{{titles}}" bind:tabclick="handleTabClick" class="{{isTabFixed ? 'fixed':''}}"/>
+<h-tab-control titles="{{titles}}" wx:if="{{isTabFixed}}"/>
+<!-- 5.展示商品数据 -->
+<h-goods goods="{{goods[currentType].list}}"/>
+
+<!-- 6.回到顶部 -->
+<!-- hidden对自定义组件无效果 -->
+<h-back-top wx:if="{{showBackTop}}"/>
