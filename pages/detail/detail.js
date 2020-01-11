@@ -9,7 +9,7 @@ import {
 
 Page({
   data: {
-    iid: '',//1m7c6iu
+    iid: '1m7c6iu',//1m7c6iu
     topImages: [],
     baseInfo: {},
     shopInfo: {},
@@ -20,9 +20,9 @@ Page({
   },
   //-------------------------------生命周期----------------------
   onLoad: function (options) {
-    this.setData({
-      iid: options.iid
-    })
+    // this.setData({
+    //   iid: options.iid
+    // })
 
     // 请求商品详情数据
     this._getDetail();
@@ -35,7 +35,7 @@ Page({
   _getDetail(){
     const iid = this.data.iid;
     getDetail(iid).then(res=>{
-      console.log(res);
+      // console.log(res);
       const data = res.data.result;
       // 1. 轮播图
       const topImages = data.itemInfo.topImages;
@@ -65,18 +65,18 @@ Page({
 
   _getRecommends(){
     getRecommends().then(res=>{
-      console.log(res);
+      // console.log(res);
       this.setData({
         recommends: res.data.data.list
       })
     })
-  }
-
-
-
-
-
-
+  },
 
   //------------------------------事件监听------------------------
+  addToCart(){
+    console.log('111');
+    wx.showToast({
+      title: '加入购物车成功',
+    })
+  }
 })

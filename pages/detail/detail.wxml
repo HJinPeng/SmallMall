@@ -8,3 +8,4 @@
   <h-comment-info commentInfo="{{commentInfo}}"/>
   <h-recommend-info recommends="{{recommends}}"/>
 </scroll-view>
+<h-bottom-bar bind:addCart="addToCart"/>

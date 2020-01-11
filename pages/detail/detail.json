@@ -6,7 +6,8 @@
     "h-detail-info": "./childCpns/h-detail-info/h-detail-info",
     "h-param-info": "./childCpns/h-param-info/h-param-info",
     "h-comment-info": "./childCpns/h-comment-info/h-comment-info",
-    "h-recommend-info": "./childCpns/h-recommend-info/h-recommend-info"
+    "h-recommend-info": "./childCpns/h-recommend-info/h-recommend-info",
+    "h-bottom-bar": "./childCpns/h-bottom-bar/h-bottom-bar"
   },
   "navigationBarTitleText": "商品详情"
 }
