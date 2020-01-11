@@ -1,0 +1,5 @@
+/* pages/detail/detail.wxss */
+
+.h-swiper swiper{
+  height: 800rpx;
+}

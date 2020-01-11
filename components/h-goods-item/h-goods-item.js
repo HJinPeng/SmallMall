@@ -8,5 +8,13 @@ Component({
   },
   data: {
 
+  },
+  methods:{
+    itemClick(){
+      const iid = this.data.item.iid;
+      wx.navigateTo({
+        url: '/pages/detail/detail?iid='+iid
+      })
+    }
   }
 })
