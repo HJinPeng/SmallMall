@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "h-header": "./childCpns/h-header/h-header",
+    "h-info":"./childCpns/h-info/h-info",
+    "h-list-view":"./childCpns/h-list-view/h-list-view"
+  },
+  "navigationBarTitleText": "我的信息"
 }
