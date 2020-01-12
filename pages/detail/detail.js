@@ -7,9 +7,11 @@ import {
   ParamInfo
 } from '../../service/detail'
 
+const app = getApp();
+
 Page({
   data: {
-    iid: '1m7c6iu',//1m7c6iu
+    iid: '',//1m7c6iu
     topImages: [],
     baseInfo: {},
     shopInfo: {},
@@ -20,9 +22,9 @@ Page({
   },
   //-------------------------------生命周期----------------------
   onLoad: function (options) {
-    // this.setData({
-    //   iid: options.iid
-    // })
+    this.setData({
+      iid: options.iid
+    })
 
     // 请求商品详情数据
     this._getDetail();
@@ -74,7 +76,15 @@ Page({
 
   //------------------------------事件监听------------------------
   addToCart(){
-    console.log('111');
+    const obj = {};
+    obj.iid = this.data.iid;
+    obj.imageURL = this.data.topImages[0];
+    obj.title = this.data.baseInfo.title;
+    obj.desc = this.data.baseInfo.desc;
+    obj.price = this.data.baseInfo.realPrice;
+
+    app.addToCart(obj);
+
     wx.showToast({
       title: '加入购物车成功',
     })
